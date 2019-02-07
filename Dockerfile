@@ -1,3 +1,5 @@
+# Copyright 2019, Burkhard Stubert (DBA Embedded Use)
+
 # In any directory on the docker host, perform the following actions:
 #   * Copy this Dockerfile in the directory.
 #   * Create input and output directories: mkdir -p yocto/output yocto/input
