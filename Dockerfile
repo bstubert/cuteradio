@@ -17,7 +17,8 @@ FROM ubuntu:16.04
 # tar, locales and cpio are not listed in the official Yocto documentation. The build, however,
 # without them.
 RUN apt-get update && apt-get -y install gawk wget git-core diffstat unzip texinfo gcc-multilib \
-    build-essential chrpath socat libsdl1.2-dev xterm python python3 tar locales cpio
+     build-essential chrpath socat cpio python python3 python3-pip python3-pexpect \
+     xz-utils debianutils iputils-ping libsdl1.2-dev xterm tar locales
 
 # By default, Ubuntu uses dash as an alias for sh. Dash does not support the source command
 # needed for setting up the build environment in CMD. Use bash as an alias for sh.
