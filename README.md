@@ -4,14 +4,14 @@ Clone the repo:
 
     $ mkdir work-cuteradio
     $ cd work-cuteradio
-    /work-cuteradio$ git clone --recurse-submodules https://github.com/fkromer/cuteradio.git
+    /work-cuteradio$ git clone --recurse-submodules https://github.com/bstubert/cuteradio.git
 
 Install the helper script `ycr` into the user's local binary directory:
 
     /work-cuteradio$ cp cuteradio/ycr ~/.local/bin
     /work-cuteradio$ chmod +x ~/.local/bin/ycr
 
-    wget -O ~/.local/bin/ycr https://github.com/fkromer/cuteradio/blob/master/ycr
+    wget -O ~/.local/bin/ycr https://github.com/bstubert/cuteradio/blob/master/ycr
     chmod +x ~/.local/bin/ycr
 
 Change the directory paths for all BBLAYERS in
@@ -19,7 +19,7 @@ Change the directory paths for all BBLAYERS in
 
     /work-cuteradio$ $ sed -i 's/\/home\/cuteradio\/yocto\/input/\/work-cuteradio/g' cuteradio/sources/meta-cuteradio/custom/bblayers.conf.sample
 
-sed -i 's/home/work-cuteradio/g' cuteradio/sources/meta-cuteradio/custom/bblayers.conf.sample
+-sed -i 's/home/work-cuteradio/g' cuteradio/sources/meta-cuteradio/custom/bblayers.conf.sample
 
 Check if the file contains the adjusted directory paths with
 `/work-cuteradio$ cat cuteradio/sources/meta-cuteradio/custom/bblayers.conf.sample`.
