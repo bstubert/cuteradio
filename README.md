@@ -19,8 +19,6 @@ Change the directory paths for all BBLAYERS in
 
     /work-cuteradio$ $ sed -i 's/\/home\/cuteradio\/yocto\/input/\/work-cuteradio/g' cuteradio/sources/meta-cuteradio/custom/bblayers.conf.sample
 
--sed -i 's/home/work-cuteradio/g' cuteradio/sources/meta-cuteradio/custom/bblayers.conf.sample
-
 Check if the file contains the adjusted directory paths with
 `/work-cuteradio$ cat cuteradio/sources/meta-cuteradio/custom/bblayers.conf.sample`.
 
