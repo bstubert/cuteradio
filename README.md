@@ -1,44 +1,42 @@
 # cuteradio
 
-Clone the repo:
+Cuteradio is the main repository for a simple Qt-based Internet radio that runs on a Raspberry Pi 3. This repository contains five submodules. Each submodule corresponds to a Yocto layer and is added as a subdirectory to the directory _cuteradio/sources_. Cuteradio is currently based on the Yocto release _thud_.
 
-    $ mkdir work-cuteradio
-    $ cd work-cuteradio
-    /work-cuteradio$ git clone --recurse-submodules https://github.com/bstubert/cuteradio.git
+We must install Docker before we can run the Yocto build. Docker installation is described [here](https://www.embeddeduse.com/2019/02/11/using-docker-containers-for-yocto-builds/#install). We execute the Yocto build in the [Docker container CROPS](https://hub.docker.com/u/crops/) as described in the blog post [Yocto Builds with CROPS Containers](https://www.embeddeduse.com/2019/05/06/yocto-builds-with-crops-containers/).
 
-Install the helper script `ycr` into the user's local binary directory:
+We create a work directory at a place of our choice and clone the main repository with all its submodules.
 
-    /work-cuteradio$ cp cuteradio/ycr ~/.local/bin
-    /work-cuteradio$ chmod +x ~/.local/bin/ycr
+    host$ mkdir work-cuteradio
+    host$ cd work-cuteradio
+    host$ git clone --recurse-submodules https://github.com/bstubert/cuteradio.git
 
-    wget -O ~/.local/bin/ycr https://github.com/bstubert/cuteradio/blob/master/ycr
-    chmod +x ~/.local/bin/ycr
+For convenience, we copy the helper script _./cuteradio/ycr_ to the path _~/bin_, which is included in _PATH_. 
 
-Change the directory paths for all BBLAYERS in
-`/work-cuteradio/cuteradio/sources/meta-cuteradio/custom/bblayers.conf.sample` to the directory `/work-cuteradio` inside the container:
+    host$ cp ./cuteradio/ycr ~/bin
 
-    /work-cuteradio$ $ sed -i 's/\/home\/cuteradio\/yocto\/input/\/work-cuteradio/g' cuteradio/sources/meta-cuteradio/custom/bblayers.conf.sample
 
-Check if the file contains the adjusted directory paths with
-`/work-cuteradio$ cat cuteradio/sources/meta-cuteradio/custom/bblayers.conf.sample`.
+The call
 
-    BBLAYERS ?= " \
-       /work-cuteradio/cuteradio/sources/poky/meta \
-       /work-cuteradio/cuteradio/sources/poky/meta-poky \
-    ...
+    host$ ./cuteradio/ycr <yocto-command>
 
-The file lines to change correspond to the meta-layer configuration which can
-be found in the
-[github repository meta-cuteradio](https://github.com/bstubert/meta-cuteradio/blob/master/custom/bblayers.conf.sample#L9L15).
+spins up the CROPS container, enters the Yocto build environement and executes the _<yocto-command>_.
 
-To enter the bash in the docker container execute:
+For example, if we want to run Yocto commands interactively in the build environment, we execute the following command. 
 
-    /work-cuteradio$ ycr bash
-    pokyuser@26fea839ba24:/work-cuteradio/build$
+    host$ ycr bash
+    pokyuser@fd206ebcd9d6:/work-cuteradio/build$
 
-To build an image execute:
+The second line is in the Linux environment provided by the CROPS container. So, we could run bitbake to build the Cuteradio image.
 
-    /work-cuteradio$ ycr bitbake cuteradio-image
+    pokyuser@fd206ebcd9d6:/work-cuteradio/build$ bitbake cuteradio-image
 
-The full documentation can be found in the blog post
-[Yocto Builds with CROPS Containers](https://www.embeddeduse.com/2019/05/06/yocto-builds-with-crops-containers/).
+We exit the container with the command:
+
+    pokyuser@fd206ebcd9d6:/work-cuteradio/build$ exit
+
+
+We can also start the Yocto build with a single command:
+
+    host$ ycr bitbake cuteradio-image
+
+
