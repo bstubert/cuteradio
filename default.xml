@@ -18,7 +18,7 @@
 
     <project name="meta-qt5"
         remote="qt"
-        revision="5.15"
+        revision="5.14"
         path="sources/meta-qt5"/>
 
     <project name="meta-raspberrypi"
