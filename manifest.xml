@@ -1,49 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
-  <!-- Yocto -->
-  <remote name="yocto"
-          fetch="git://git.yoctoproject.org"/>
-  <project name="poky"
-           remote="yocto"
-           revision="5e1f52edb7a9f790fb6cb5d96502f3690267c1b1"
-           path="sources/poky"/>
 
-  <!-- OpenEmbedded -->
-  <remote name="oe"
-          fetch="git://git.openembedded.org"/>
-  <remote name="oe-mirror"
-          fetch="git://github.com/openembedded"/>
-  <project name="meta-openembedded"
-           remote="oe"
-           revision="9e60d30669a2ad0598e9abf0cd15ee06b523986b"
-           path="sources/meta-openembedded"/>
-  <project name="meta-python2"
-           remote="oe"
-           revision="4400f9155ec193d028208cf0c66aeed2ba2b00ab"
-           path="sources/meta-python2"/>
+    <remote name="yocto" fetch="git://git.yoctoproject.org"/>
+    <remote name="oe" fetch="git://git.openembedded.org"/>
+    <remote name="qt" fetch="git://code.qt.io/yocto"/>
+    <remote name="cuteradio" fetch="https://github.com/bstubert"/>
 
-  <!-- Qt -->
-  <remote name="qt"
-          fetch="git://code.qt.io/yocto"
-          pushurl="ssh://codereview.qt-project.org/yocto"/>
-  <remote name="gerrit"
-          fetch="ssh://codereview.qt-project.org/yocto"/>
-  <project name="meta-boot2qt"
-           remote="qt"
-           revision="zeus"
-           path="sources/meta-boot2qt">
-    <linkfile dest="setup-environment.sh" src="scripts/setup-environment.sh"/>
-    <linkfile dest="sources/templates" src="meta-boot2qt-distro/conf"/>
-  </project>
-  <project name="meta-qt5"
-           remote="qt"
-           revision="5.15"
-           path="sources/meta-qt5"/>
+    <project name="poky"
+        remote="yocto"
+        revision="5e1f52edb7a9f790fb6cb5d96502f3690267c1b1"
+        path="sources/poky"/>
 
-  <!-- Raspberry Pi -->
-  <project name="meta-raspberrypi"
-           remote="yocto"
-           revision="cee2557dc872ddaf721e6badb981c7772503f8ea"
-           path="sources/meta-raspberrypi"/>
+    <project name="meta-openembedded"
+        remote="oe"
+        revision="9e60d30669a2ad0598e9abf0cd15ee06b523986b"
+        path="sources/meta-openembedded"/>
+
+    <project name="meta-qt5"
+        remote="qt"
+        revision="5.15"
+        path="sources/meta-qt5"/>
+
+    <project name="meta-raspberrypi"
+        remote="yocto"
+        revision="cee2557dc872ddaf721e6badb981c7772503f8ea"
+        path="sources/meta-raspberrypi"/>
+
+    <project name="meta-cuteradio"
+        remote="cuteradio"
+        revision="cd7806223f072f8600cd41fe091cb6a57a4d6ecb"
+        path="sources/meta-cuteradio"/>
 
 </manifest>
