@@ -1,34 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
 
-    <remote name="yocto" fetch="git://git.yoctoproject.org"/>
-    <remote name="oe" fetch="git://git.openembedded.org"/>
-    <remote name="qt" fetch="git://code.qt.io/yocto"/>
-    <remote name="cuteradio" fetch="https://github.com/bstubert"/>
+    <remote name="yocto" fetch="git://git.yoctoproject.org" revision="thud"/>
+    <remote name="oe" fetch="git://git.openembedded.org" revision="thud"/>
+    <remote name="qt" fetch="git://code.qt.io/yocto" revision="thud"/>
+    <remote name="cuteradio" fetch="https://github.com/bstubert" revision="thud"/>
 
     <project name="poky"
         remote="yocto"
-        revision="thud"
         path="sources/poky"/>
 
     <project name="meta-openembedded"
         remote="oe"
-        revision="thud"
         path="sources/meta-openembedded"/>
 
     <project name="meta-qt5"
         remote="qt"
-        revision="thud"
         path="sources/meta-qt5"/>
 
     <project name="meta-raspberrypi"
         remote="yocto"
-        revision="thud"
         path="sources/meta-raspberrypi"/>
 
     <project name="meta-cuteradio"
         remote="cuteradio"
-        revision="thud"
         path="sources/meta-cuteradio"/>
 
 </manifest>
