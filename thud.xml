@@ -9,27 +9,27 @@
 
     <project name="poky"
         remote="yocto"
-        revision="refs/tags/thud"
+        revision="958427e9d2ee7276887f2b02ba85cf0996dea553"
         path="sources/poky"/>
 
     <project name="meta-openembedded"
         remote="oe"
-        revision="refs/tags/thud"
+        revision="446bd615fd7cb9bc7a159fe5c2019ed08d1a7a93"
         path="sources/meta-openembedded"/>
 
     <project name="meta-qt5"
         remote="qt"
-        revision="refs/tags/thud"
+        revision="e6e464c9ed9266ce46452f953c1bdcb0e7b2d95f"
         path="sources/meta-qt5"/>
 
     <project name="meta-raspberrypi"
         remote="raspberrypi"
-        revision="refs/tags/thud"
+        revision="4e5be97d75668804694412f9b86e9291edb38b9d"
         path="sources/meta-raspberrypi"/>
 
     <project name="meta-cuteradio"
         remote="cuteradio"
-        revision="refs/heads/thud"
+        revision="178e4af9e6bf6b45a69cfb6fe040ccd8c7b650d3"
         path="sources/meta-cuteradio"/>
 
 </manifest>
