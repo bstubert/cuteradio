@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+    <remote name="oe" fetch="git://git.openembedded.org"/>
+    <remote name="yocto" fetch="git://git.yoctoproject.org"/>
+    <remote name="raspberrypi" fetch="https://git.yoctoproject.org/cgit/cgit.cgi"/>
+    <remote name="qt" fetch="https://github.com/meta-qt5/"/>
+    <remote name="cuteradio" fetch="https://github.com/bstubert"/>
+
+    <project name="meta-openembedded"
+        remote="oe"
+        revision="warrior"
+        path="sources/meta-openembedded"/>
+
+     <project name="poky"
+        remote="yocto"
+        revision="warrior"
+        path="sources/poky"/>
+
+   <project name="meta-raspberrypi"
+        remote="raspberrypi"
+        revision="warrior"
+        path="sources/meta-raspberrypi"/>
+
+    <project name="meta-qt5"
+        remote="qt"
+        revision="warrior"
+        path="sources/meta-qt5"/>
+
+    <project name="meta-cuteradio"
+        remote="cuteradio"
+        revision="warrior"
+        path="sources/meta-cuteradio"/>
+
+</manifest>
+
+
